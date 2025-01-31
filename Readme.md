@@ -1,56 +1,57 @@
-# NITS Data Science Case Study
 
-## Overview
+# Data Science Case Study: Predicting Target Variable with Feature Engineering  
 
-This project is a case study for the NITS Data Science position. The goal of the project is to build a model to predict a target variable based on four features. The dataset is provided by NITS Solutions and is not publicly available.
+## Overview  
 
-## Data Exploration and Preprocessing
+This project focuses on building a predictive model for a given dataset using four features. The goal is to develop a robust model that accurately predicts the target variable while addressing challenges such as feature correlation, non-linearity, and data preprocessing.  
 
-- The dataset was explored using descriptive statistics, histograms, and scatter plots.
-- Missing values were removed, retaining 99.74% of the original data.
-- Outliers were identified using box plots and addressed using the Z-score method with a threshold of 2.
-- The target variable was found to have a balanced distribution across its classes.
-- Feature distributions were analyzed using KDE plots, revealing that most features follow a normal distribution except for 'feature4' and the target variable.
-- Correlation between features and the target was assessed using a heatmap, indicating very low correlation.
-- Scatter plots were used to visualize the relationship between features and the target, confirming the non-linear separability of the data.
+## Data Exploration and Preprocessing  
 
-## Baseline Model Building
+- The dataset was analyzed using descriptive statistics, histograms, and scatter plots.  
+- Missing values were removed, retaining 99.74% of the original data.  
+- Outliers were identified and addressed using the Z-score method with a threshold of 2.  
+- The target variable exhibited a balanced distribution across classes.  
+- Kernel Density Estimation (KDE) plots revealed that most features followed a normal distribution, except for 'feature4' and the target variable.  
+- Correlation analysis using a heatmap indicated low correlation between features and the target.  
+- Scatter plots confirmed the dataset’s non-linear separability.  
 
-Several baseline models were built to establish a performance benchmark, including:
+## Baseline Model Building  
 
-- Random Forest (RF)
-- Decision Tree (DT)
-- XGBoost (Boosting)
-- Naive Bayes (NB)
-- Support Vector Machine (SVM)
+Several baseline models were implemented to establish a performance benchmark:  
 
-The models were evaluated using accuracy, precision, recall, and F1-score. The accuracy of all models was close to random guessing, suggesting the need for further feature engineering.
+- Random Forest (RF)  
+- Decision Tree (DT)  
+- XGBoost (Boosting)  
+- Naive Bayes (NB)  
+- Support Vector Machine (SVM)  
 
-## Feature Engineering
+The models were evaluated using accuracy, precision, recall, and F1-score. The results suggested performance close to random guessing, highlighting the need for further feature engineering.  
 
-Various feature engineering techniques were applied to improve model performance:
+## Feature Engineering  
 
-- Polynomial Features
-- Log Transformations
-- Trigonometric Transformations
-- Mutual Information Interaction
-- Squared Features
+To enhance model performance, various transformations were applied:  
 
-## Model Evaluation and Selection
+- Polynomial Features  
+- Log Transformations  
+- Trigonometric Transformations  
+- Mutual Information Interaction  
+- Squared Features  
 
-- The models were retrained using the engineered features and evaluated using the same metrics as before.
-- Log Transformations consistently showed the best performance across all tree-based models, particularly with XGBoost achieving the highest accuracy.
-- Despite improvements, the overall performance remained relatively low due to the inherent limitations of the dataset, including the lack of correlation with the target and multicollinearity.
+## Model Evaluation and Selection  
 
-## Conclusion
+- Models were retrained using the engineered features and evaluated using the same metrics.  
+- Log Transformations yielded the best performance across all tree-based models, with XGBoost achieving the highest accuracy.  
+- Despite improvements, performance remained limited due to dataset constraints such as low feature-target correlation and multicollinearity.  
 
-- Log transformation with XGBoost was identified as the most promising approach, though further exploration may be needed.
-- The dataset's non-linearly separable nature and high multicollinearity pose challenges for achieving high accuracy.
-- Advanced feature engineering techniques, feature selection, and exploring external data sources could potentially improve performance.
+## Conclusion  
 
-## Recommendations for Future Work
+- Log transformation combined with XGBoost showed the most promising results, though additional refinements may be necessary.  
+- The dataset’s challenges, including non-linearity and multicollinearity, made achieving high accuracy difficult.  
+- Advanced feature engineering, feature selection, and additional data sources could improve future performance.  
 
-- Explore feature selection methods to identify the most relevant features.
-- Consider more complex models or ensemble techniques to capture non-linear relationships.
-- Investigate the possibility of incorporating external data sources to enrich the dataset.
-- Perform hyperparameter tuning to optimize model performance.
+## Recommendations for Future Work  
+
+- Implement feature selection methods to retain only the most relevant variables.  
+- Explore complex models or ensemble techniques to better capture non-linear relationships.  
+- Investigate external data sources to enhance the dataset.  
+- Perform hyperparameter tuning for further model optimization.  
